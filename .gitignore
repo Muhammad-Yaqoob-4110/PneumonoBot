@@ -1,0 +1,10 @@
+Api/.env
+Api/Images
+Api/config.json
+
+Save Locally/Images
+Save Locally/vit_classification_pneumonia
+
+chatbot/__pycache__
+chatbot/vit_classification_pneumonia
+chatbot/config.json
