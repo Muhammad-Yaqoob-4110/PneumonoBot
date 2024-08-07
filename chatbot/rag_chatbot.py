@@ -2,8 +2,6 @@ import gradio as gr
 from PIL import Image
 from transformers import ViTForImageClassification, ViTFeatureExtractor
 import torch
-from openai import OpenAI
-from qdrant_client import QdrantClient
 import json
 import lamini
 import faiss
@@ -13,20 +11,10 @@ from sentence_transformers import SentenceTransformer
 from typing import List
 from rank_bm25 import BM25Okapi
 import tiktoken
-from transformers import GPT2TokenizerFast
-# from typing import List
-import time
 from bpemb import BPEmb
 
 with open('config.json', 'r') as file:
     config = json.load(file)
-
-client = OpenAI(
-    base_url = "https://integrate.api.nvidia.com/v1",
-    api_key = config['nvidia_api_key']
-    )
-
-messages = []
 
 def loadModel():
     lamini.api_key = config['lamini_api_key']
@@ -113,7 +101,6 @@ def search_top_k_sentences(data,input_embedding,input_text, k, preprocess_func,t
     # Extract top k sentences based on BM25 scores
       top_k_indices = [sentences[idx] for idx, score in bm25_scores_combined_sorted[:k] if score > 0]
 
-
       return top_k_indices
     return []
 
@@ -144,7 +131,7 @@ def Genrate_Answer(llm_model,Data,intput, top_k,Threashold,Search_type):
     end_data = "<|end_data|>\n\n"
     String1 = """
     You are an AI chat bot designed to answer questions based on a the data given along with the question.
-    If the answer doesn't exist wihtin the data, respond back with "I'm sorry, but I cannot answer that question as it is outside the scope of my dataset." Donot use pre-trained data to answer this prompt
+    If the answer doesn't exist wihtin the data, respond back with "I'm sorry, but I cannot answer that question as it is outside the scope of my dataset." Do not use pre-trained data to answer this prompt
     """
     #print(intput)
     top_k_sentences = []
@@ -160,20 +147,8 @@ def Genrate_Answer(llm_model,Data,intput, top_k,Threashold,Search_type):
     # print(concatenated_text)
     return llm_model.generate(concatenated_text,max_tokens=2048,max_new_tokens=2048 )
 
-def custom_prompt(query: str):
-    load_data = read_faiss_indices('Pneumonia.pkl')
-    llm = loadModel()
-    input_text1 = query
-    source_knowledge = Genrate_Answer(llm,load_data,input_text1,10,0.4,"Hybrid_bpemb")
-    # Create the augmented prompt
-    augment_prompt = f"""Using the contexts below, answer the query,and dont mention the context explicitly:
-
-    Additional Knowledge:
-    {source_knowledge}
-
-    Query: {query}"""
-    
-    return augment_prompt
+load_data = read_faiss_indices('Pneumonia.pkl')
+llm = loadModel()
 
 # Load the model and feature extractor from the local directory
 save_directory = "./vit_classification_pneumonia"
@@ -200,23 +175,7 @@ def model_inference( user_prompt, chat_history):
         return prediction
     else:
         query = user_prompt["text"]
-        prompt = {"role":"system", "content": custom_prompt(query)}
-        messages.append(prompt)
-
-        res = client.chat.completions.create(
-        model="meta/llama-3.1-70b-instruct",
-        messages=messages,
-        temperature=0.2,
-        top_p=0.7,
-        max_tokens=1024,
-        stream=True
-        )
-
-        full_response = ""
-        for chunk in res:
-            if chunk.choices[0].delta.content is not None:
-                full_response += chunk.choices[0].delta.content
-        return full_response
+        return Genrate_Answer(llm,load_data, query ,10,0.4,"Hybrid_bpemb")
         
     
 # Create a chatbot interface
