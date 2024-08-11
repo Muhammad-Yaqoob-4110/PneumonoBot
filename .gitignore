@@ -8,3 +8,7 @@ Save Locally/vit_classification_pneumonia
 chatbot/__pycache__
 chatbot/vit_classification_pneumonia
 chatbot/config.json
+
+Pneumonia Classification Using ViT/config.json
+
+Save Embeddings Locally/config.json
