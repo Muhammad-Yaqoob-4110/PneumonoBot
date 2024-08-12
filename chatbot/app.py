@@ -1,7 +1,7 @@
 import gradio as gr
 
 # Import modules from other files
-from rag_chatbot import model_inference, chatbot
+from local_embeddigs_rag_chatbot import model_inference, chatbot
 
 # Chat interface block
 with gr.Blocks(
