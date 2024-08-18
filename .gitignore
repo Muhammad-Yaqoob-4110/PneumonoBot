@@ -2,8 +2,9 @@ Api/.env
 Api/Images
 Api/config.json
 
-Save Locally/Images
-Save Locally/vit_classification_pneumonia
+Save Model at Hugging face Locally/Images
+Save Model at Hugging face Locally/vit_classification_pneumonia
+Save Model at Hugging face Locally/vit_classification_pneumonobot
 
 chatbot/__pycache__
 chatbot/vit_classification_pneumonia
@@ -14,3 +15,5 @@ Pneumonia Classification Using ViT/config.json
 Save Embeddings Locally/config.json
 
 Save Embeddings to Qdrant/config.json
+
+Essentials/

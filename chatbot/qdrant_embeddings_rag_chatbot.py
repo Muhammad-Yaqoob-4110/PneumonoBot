@@ -49,7 +49,7 @@ def custom_prompt(query: str):
     source_knowledge = "\n".join([x.payload['text'] for x in results])
     
     # Create the augmented prompt
-    augment_prompt = f"""Using the contexts below, answer the query,and dont mention the context explicitly:
+    augment_prompt = f"""Answer the query,and dont mention the context explicitly:
 
     Additional Knowledge:
     {source_knowledge}
