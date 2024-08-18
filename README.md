@@ -21,6 +21,16 @@ This repository is organized into various directories that contain the code and 
 
 - **Chatbot Folder**: Contains the implementation of the chatbot, which is available in two versions—one that uses locally stored embeddings and another that utilizes embeddings from Qdrant. Currently, the chatbot is configured to use the embeddings stored in Qdrant.
 
+## Methodology Diagram for the Pneumonia Classification
+![Methodology Diagram for the Pneumonia Classification](./Pneumonia%20Classification%20Using%20ViT/flowchart-Pneumonia%20Classification.jpg
+)
+
+## Methodology Diagram for the implementatin of RAG
+![Methodology Diagram for the implementatin of RAG](./Save%20Embeddings%20to%20Qdrant/flowchart-RAG%20Methodology.jpg)
+
+## Workflow diagram for the chatbot
+![Workflow diagram for the chatbot](./chatbot/chatbot%20-%20flowchart%20.jpg)
+
 ## User Interface
 
 This is the main user interface of PneumonoBot, where users can upload chest X-ray images and interact with the chatbot.
