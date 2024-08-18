@@ -59,7 +59,7 @@ def custom_prompt(query: str):
     return augment_prompt
 
 # Load the model and feature extractor from the local directory
-save_directory = "./vit_classification_pneumonia"
+save_directory = "./vit_classification_pneumonobot"
 model = ViTForImageClassification.from_pretrained(save_directory)
 feature_extractor = ViTFeatureExtractor.from_pretrained(save_directory)
 

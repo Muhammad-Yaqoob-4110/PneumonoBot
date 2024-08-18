@@ -7,7 +7,7 @@ Save Model at Hugging face Locally/vit_classification_pneumonia
 Save Model at Hugging face Locally/vit_classification_pneumonobot
 
 chatbot/__pycache__
-chatbot/vit_classification_pneumonia
+chatbot/vit_classification_pneumonobot
 chatbot/config.json
 
 Pneumonia Classification Using ViT/config.json
