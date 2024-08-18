@@ -40,7 +40,7 @@ def custom_prompt(query: str):
 
     # Perform similarity search
     results = qdrant_client.search(
-        collection_name="pneumoniaBot5",
+        collection_name="pneumonoBot",
         query_vector=query_embedding,
 
     )
@@ -87,7 +87,7 @@ def model_inference( user_prompt, chat_history):
         messages.append(prompt)
 
         res = client.chat.completions.create(
-        model="meta/llama-3.1-70b-instruct",
+        model="meta/llama-3.1-8b-instruct",
         messages=messages,
         temperature=0.2,
         top_p=0.7,
@@ -104,7 +104,7 @@ def model_inference( user_prompt, chat_history):
     
 # Create a chatbot interface
 chatbot = gr.Chatbot(
-    label="PneumoniaBot",
+    label="PneumonoBot",
     avatar_images=[None, None],
     show_copy_button=True,
     likeable=True,
