@@ -44,6 +44,9 @@ For more detailed information about the PneumonoBot project, including the entir
 
 You can access the full report here: [PneumonoBot Report](./PneumonoBot%20Report.pdf)
 
+## Hugging Face Link
+
+Explore the full details of PneumonoBot on Hugging Face, including instructions on how to download and use the model: [PneumonoBot on Hugging Face](https://huggingface.co/M-Yaqoob/PneumonoBot).
 
 ## User Interface
 Below are the screenshots showcasing the interface and results.
