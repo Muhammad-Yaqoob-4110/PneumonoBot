@@ -1,6 +1,6 @@
 # PneumonoBot - Pneumonia Detection and Chatbot System
 
-PneumonoBot is a system designed to classify chest X-ray images as either Normal or Pneumonia, using a fine-tuned Vision Transformer (ViT) model. It also includes a chatbot capable of answering questions related to pneumonia. Below are the screenshots showcasing the interface and results.
+PneumonoBot is a system designed to classify chest X-ray images as either Normal or Pneumonia, using a fine-tuned Vision Transformer (ViT) model. It also includes a chatbot capable of answering questions related to pneumonia.
 
 
 ## Directories Overview
@@ -22,18 +22,31 @@ This repository is organized into various directories that contain the code and 
 - **Chatbot Folder**: Contains the implementation of the chatbot, which is available in two versions—one that uses locally stored embeddings and another that utilizes embeddings from Qdrant. Currently, the chatbot is configured to use the embeddings stored in Qdrant.
 
 ## Methodology Diagram for the Pneumonia Classification
+Below is the methodology diagram followed during the pneumonia classification.
+
 ![Methodology Diagram for the Pneumonia Classification](./Pneumonia%20Classification%20Using%20ViT/flowchart-Pneumonia%20Classification.jpg
 )
 
 ## Methodology Diagram for the implementatin of RAG
+Below is the explanation of all the steps followed during the RAG implementation.
+
 ![Methodology Diagram for the implementatin of RAG](./Save%20Embeddings%20to%20Qdrant/flowchart-RAG%20Methodology.jpg)
 
 ## Workflow diagram for the chatbot
+Below is the simplest methodology diagram that we think any layman can understand.
 ![Workflow diagram for the chatbot](./chatbot/chatbot%20-%20flowchart%20.jpg)
 
-## User Interface
+## PneumonoBot Project Report
 
-This is the main user interface of PneumonoBot, where users can upload chest X-ray images and interact with the chatbot.
+For more detailed information about the PneumonoBot project, including the entire workflow, you can refer to the comprehensive project report. The report covers everything from the introduction and dataset description to the methodology for pneumonia classification and the implementation of the Retrieval-Augmented Generation (RAG) model.
+
+You can access the full report here: [PneumonoBot Report](./PneumonoBot%20Report.pdf)
+
+
+## User Interface
+Below are the screenshots showcasing the interface and results.
+
+This is the main user interface of PneumonoBot, where users can upload chest X-ray images and interact with the chatbot. 
 
 ![UI Screenshot](./UI-Images/Ui.png)
 
@@ -72,3 +85,4 @@ Another example of the chatbot answering a question about pneumonia. The system 
 ---
 
 Feel free to try out PneumonoBot by uploading X-ray images and asking questions related to pneumonia through the chatbot.
+
