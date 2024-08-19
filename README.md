@@ -9,6 +9,8 @@ This repository is organized into various directories that contain the code and 
 
 - **Api Folder**: Contains the Flask API implementation. If we host the model, this API will be used to interact with the model for inference and other tasks.
 
+- **Essentials**: This folder contains the books that were used for the Retrieval-Augmented Generation (RAG) process.
+
 - **Pneumonia Classification Using CNN**: Initially, we used a Convolutional Neural Network (CNN) for pneumonia classification. However, this approach only achieved an accuracy between 77%-80%. As a result, we decided to switch to fine-tuning a pre-trained Vision Transformer (ViT) model.
 
 - **Pneumonia Classification Using ViT**: This folder contains the code for fine-tuning the Vision Transformer (ViT) model. Initially, we fine-tuned the model without data augmentation and reached 87% accuracy. By applying data augmentation, we were able to improve the accuracy to 91%.
