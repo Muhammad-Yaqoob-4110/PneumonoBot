@@ -36,7 +36,7 @@ Below is the explanation of all the steps followed during the RAG implementation
 
 ## Workflow diagram for the chatbot
 Below is the simplest methodology diagram that we think any layman can understand.
-![Workflow diagram for the chatbot](./chatbot/chatbot%20-%20flowchart%20.jpg)
+![Workflow diagram for the chatbot](./chatbot/chatbot%20-%20flowchart.jpg)
 
 ## PneumonoBot Project Report
 
