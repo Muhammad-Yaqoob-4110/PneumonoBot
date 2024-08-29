@@ -49,7 +49,8 @@ def custom_prompt(query: str):
     source_knowledge = "\n".join([x.payload['text'] for x in results])
     
     # Create the augmented prompt
-    augment_prompt = f"""Answer the query,and dont mention the context explicitly:
+    augment_prompt = f"""You are required to help doctors in treating pneumonia.Answer the query,and dont mention the context explicitly. If there is no relatedd info in the 
+    Additional knowledge, just make an answer on your own.
 
     Additional Knowledge:
     {source_knowledge}
