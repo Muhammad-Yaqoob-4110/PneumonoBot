@@ -3,8 +3,8 @@
 PneumonoBot is a system designed to classify chest X-ray images as either Normal or Pneumonia, using a fine-tuned Vision Transformer (ViT) model. It also includes a chatbot capable of answering questions related to pneumonia.
 
 This project was made to server as final project of Xavor Corporation's GenAI bootcamp by,
-M. Faraz Ali
-Muhammad Yaqoob
+- M. Faraz Ali
+- Muhammad Yaqoob
 
 ## Directories Overview
 
